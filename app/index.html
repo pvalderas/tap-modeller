@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaP Modeller</title>
+
+  <link rel="stylesheet" href="vendor/bpmn-js/assets/diagram-js.css" />
+  <link rel="stylesheet" href="vendor/bpmn-js/assets/bpmn-font/css/bpmn-embedded.css" />
+  <link rel="stylesheet" href="vendor/bpmn-js-properties-panel/assets/properties-panel.css" />
+  <link rel="stylesheet" href="vendor/bpmn-js-token-simulation/assets/css/bpmn-js-token-simulation.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700" rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <style>
+
+    body, html {
+      height: 100%;
+      width: 100%;
+
+      margin: 0;
+
+      display: flex;
+      flex-direction: column;
+
+      font-family: sans-serif;
+    }
+
+    .modeler-parent {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .upper-container {
+      flex: 1;
+    }
+
+   .djs-palette{
+      top:80px !important;
+    }
+
+    #right-property-panel-container{
+      padding-right: 0px;
+    }
+
+    .bts-toggle-mode{
+      right: 20px;
+      z-index: 10000;
+      left: inherit !important;
+      top: 5px !important;
+      display:none;
+    }
+
+
+
+#io-zoom-controls {
+    width: auto;
+    position: fixed;
+    right: 10px;
+    top: 80px;
+}
+
+.io-zoom-reset {
+    margin-bottom: 10px;
+}
+.io-control-list {
+    list-style: none;
+    padding: 5px;
+    margin: 25px;
+}
+.io-control {
+    background: #FAFAFA;
+    border-radius: 2px;
+    border: solid 1px #E0E0E0;
+}
+
+.zoomBtn{
+  border:none;
+  background:inherit;
+}
+
+hr{
+  margin:8px 0;
+}
+
+  
+</style> 
+ 
+</head>
+<body>  
+  <div class="modeler-parent">
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="menu-container"></nav> <!-- class fixed-top -->
+    </div>
+    <div class="row upper-container" style="margin:0px"> 
+      <div id="modeler-container" class="col-12"></div>
+      <div id="right-property-panel-container" class="col-2" style="display:none"></div>
+    </div>
+    <div class="row" style="margin:0px;display:none" id="bottom-view"> 
+      <div id="properties-container" ></div>
+    </div>
+  </div>
+
+
+  <div id="io-zoom-controls">
+    <ul class="io-zoom-reset io-control io-control-list">
+      <li>
+        <button title="reset zoom" id="zoomResetBtn" class="zoomBtn">
+          <img src="./imgs/crosshair.png" style="width:20px" />
+        </button>
+        <hr>
+      </li>
+      <li>
+        <button title="zoom in" id="zoomInBtn" class="zoomBtn">
+          <img src="./imgs/plus.png" style="width:16px" />
+        </button>
+      </li>
+      <li>
+        <hr>
+        <button href="" title="zoom out" id="zoomOutBtn" class="zoomBtn">
+          <img src="./imgs/minus.png" style="width:16px" />
+        </button>
+      </li>
+    </ul>
+  </div>
+  
+
+  <div id="send-composition-dialog-container"></div>
+  <div id="send-system-models-dialog-container"></div>
+  <div id="download-dialog-container"></div>
+  <div id="upload-dialog-container"></div>
+  <div id="upload-bp-dialog-container"></div>
+
+  <div id="odrl-upload-dialog-container"></div>
+  <div id="odrl-management-dialog-container"></div>
+  <div id="wot-dialog-container"></div>
+  <div id="wot-descriptions-dialog-container"></div>
+  <div id="send-bp-dialog-container"></div>
+  <div id="bp-remote-dialog-container"></div>
+
+  <div id="remote-dialog-container"></div>
+  <div id="iot-device-dialog-container"></div>
+  <div id="operation-dialog-container"></div>
+  <div id="sensor-dialog-container"></div>
+  <div id="event-dialog-container"></div>
+  <div id="event-error-dialog-container"></div>
+  <div id="message-dialog-container"></div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+ 
+
+  <script type="text/javascript" src="app.js"></script>
+  <script>
+    //This code avoid the error "Blocked aria-hidden on an element because its descendant retained focus."
+    $(".modal").on('hide.bs.modal', function (event) {
+        if (document.activeElement) {
+          document.activeElement.blur();
+        }
+    });
+  </script>
+
+
+</body>
+</html>

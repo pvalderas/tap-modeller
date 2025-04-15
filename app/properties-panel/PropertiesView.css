@@ -1,0 +1,29 @@
+.element-properties label {
+  font-weight: bold;
+}
+
+.element-properties label:after {
+  content: ': ';
+}
+
+.element-properties button + button {
+  margin-left: 10px;
+}
+
+.element-properties{
+	width:80%;
+	margin: 0 auto;
+}
+
+ #properties-container {
+  overflow-y: auto;
+  border-top:double 4px gray;
+  padding: 5px;
+  height: 100px;
+
+}
+
+#properties-container fieldset{
+  margin-bottom: 10px;
+  border: solid 1px black;
+}
