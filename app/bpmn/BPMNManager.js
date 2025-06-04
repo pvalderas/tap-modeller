@@ -468,6 +468,14 @@ export default class BPMNManager{
 								        node.extensionElements=extensionElements;
 								        }
 								        break;
+
+								case "bpmn:EndEvent": {
+									let extensionElements = moddle.create('bpmn:ExtensionElements');
+									let listener=moddle.createAny('camunda:executionListener',camundaNs, {class:"es.upv.pros.pvalderas.bpcontroller.server.bpmn.EndEvent",event:"end"});
+									extensionElements.get('values').push(listener);
+									node.extensionElements=extensionElements;
+									}
+									break;
 								
 
 								/*case "bpmn:IntermediateCatchEvent":

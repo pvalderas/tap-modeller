@@ -1,7 +1,5 @@
 # TaP (Thing-awareness Processes) Modeller
 
-This is a contribution of a research work leaded by Pedro Valderas at the PROS Research Center, Universitat Politècnica de València, Spain.
+This tool was developed by Pedro Valderas at the PROS Research Center, VRAIN Institute, Polytechnic University of Valencia, Spain. It contributes to a research project conducted in collaboration with Zakaria Maamar (Doha University for Science and Technology, Doha, Qatar) and Amel Benna (Research Center for Scientific and Technical Information, Algiers, Algeria).
 
-This work presents a web-tool that supports a modelling approach based on BPMN to model TaPs. This modelling approach is suppoted by a microservice architecture aimed at facilitating the integration of business processes with the physical world that provides high flexibility to support multiples IoT device technologies, and facilitates evolution and maintenance.
-
-
+**Abstract:** Thing-aware Processes (TaPs) are business processes whose activities bind physical things and hence, act over the physical world by adjusting AC temperature in a room, for example. To ensure a successful binding, things’ capabilities and usage are specified in Web-of-Thing Thing Descriptions (WoT TD) and Open Digital Rights Language (ODRL), respectively. This usage is dependent on a set of policies indicating what things are permitted of doing, prohibited from doing, and obliged of doing. This work presents eXtended Business Process Model Notation (XBPMN) for modeling and executing thing-aware processes at design-time and run-time, respectively. The execution was supported by a microservices architecture offering the necessary functionalities for binding activities to WoT-TD things in compliance with the enabled ODRL policies.
